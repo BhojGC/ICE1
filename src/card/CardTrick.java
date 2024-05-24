@@ -56,7 +56,26 @@ public class CardTrick {
                 
         
              
-        scanner.close();         
+        scanner.close(); 
+
+        Card luckyHand = new Card();
+        luckyHand.setValue(2);
+        luckyHand.setSuit("Cubs");
+        
+        boolean foundCard = false;
+        for(Card card: magicHand){
+            if(luckyHand.getValue() == card.getValue() && luckyHand.getSuit().equals(card.getSuit())){
+                foundCard = true;
+                break;
+            }
+        }
+        if(foundCard){
+            System.out.println("Bingo!! The Selected Card is in the Magic Hand");
+        }else{
+            System.out.println("Sorry !! The Selected Card is not in the Magic Hand");
+        }
+
+        
             
  
                // add one luckcard hard code 2,clubs
